@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your_name
+      changes:
+        - createTable:
+            tableName: alerts
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  autoIncrement: true
+              - column:
+                  name: vessel_imo
+                  type: VARCHAR(7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: alert_type
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: message
+                  type: VARCHAR(255)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+                  # База сама проставит время, если мы забудем в Java
+                  defaultValueComputed: CURRENT_TIMESTAMP

@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: alert_service
+  datasource:
+    url:
+    username:
+    password:
+  kafka:
+    consumer:
+      bootstrap-servers:
+      group-id: alert-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.value.default.type: "com.thesis.alert_service.dto.MeasurementEvent"
+        spring.json.trusted.packages: "*"
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
