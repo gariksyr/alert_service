@@ -1,0 +1,16 @@
+package com.thesis.alert_service.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import org.locationtech.jts.geom.Polygon;
+
+@Entity
+@Table(name = "zones")
+@Data
+public class Zone {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private Polygon geometry;
+}

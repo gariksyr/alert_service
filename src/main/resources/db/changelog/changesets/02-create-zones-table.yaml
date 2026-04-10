@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: garik
+      changes:
+        - createTable:
+            tableName: zones
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  autoIncrement: true
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: geometry
+                  type: geometry(Polygon, 4326) # Геометрия в формате WGS84
+                  constraints:
+                    nullable: false
