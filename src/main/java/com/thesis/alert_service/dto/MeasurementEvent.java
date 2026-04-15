@@ -17,4 +17,9 @@ public class MeasurementEvent {
     private double speed;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime timestamp;
+    private Double temperature;
+    private Double humidity;
+    private Double pressure;
+    private Double windSpeed;
+    private Integer windDirection;
 }
