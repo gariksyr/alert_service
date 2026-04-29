@@ -37,4 +37,8 @@ public class AlertService {
         Alert alert = alertRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         alertRepository.delete(alert);
     }
+    @Transactional
+    public void saveAlert(Alert alert) {
+        alertRepository.save(alert);
+    }
 }
