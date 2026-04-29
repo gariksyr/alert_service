@@ -1,9 +1,7 @@
 package com.thesis.alert_service.controller;
 
-import com.thesis.alert_service.dto.AlertRequestDTO;
 import com.thesis.alert_service.dto.AlertResponseDTO;
 import com.thesis.alert_service.model.Zone;
-import com.thesis.alert_service.repository.AlertRepository;
 import com.thesis.alert_service.service.AlertService;
 import com.thesis.alert_service.service.ZoneService;
 import io.swagger.v3.oas.annotations.tags.Tag;
